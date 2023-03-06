@@ -87,6 +87,10 @@
     height: fit-content;
 }
 
+.span1{
+    color: #CEE3E9;
+
+}
 .Btn{
     position: absolute;
     background-color: #53FFAA;

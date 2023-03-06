@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function BlockSpan(randomJokes){
+export function useBlockSpan(randomJokes){
     const [change, setChange] = useState(null)
     
     useEffect(() => {

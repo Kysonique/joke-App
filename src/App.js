@@ -23,6 +23,8 @@ function App() {
 
   const handleSubmit = ((e) => {
     setURL("https://icanhazdadjoke.com/search")
+    handleBlock()
+
       // setSearchValue(inputData);
       // console.log(searchValue)
   })
@@ -30,6 +32,7 @@ function App() {
 
   const handleRandomJoke = (() => {
     fetchJoke()
+    setHideSpan(true)
       console.log(randomJokes)
   })
 
@@ -106,7 +109,7 @@ function App() {
         <button type="submit" className='search-btn' onClick={handleSubmit}><img src={SearchIcon}/></button>
           <br/>
           
-        <div className='search-span'>
+        <div className='search-span' style={{display: (hideSpan? "none": "block")}}>
           <span className='span1'>{inputData}</span>
         </div>
       </div>
