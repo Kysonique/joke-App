@@ -11,7 +11,7 @@ function App() {
   const [searchJoke, setSearchJoke] = useState([])
   const [URL, setURL] = useState("")
   const [searchValue, setSearchValue] = useState('')
-  const [inputData, setInputData] = useState()
+  const [inputData, setInputData] = useState([])
   const [hideSpan, setHideSpan] = useState(true)
   const {change} = useBlockSpan(randomJokes)
 
@@ -38,17 +38,17 @@ function App() {
 
   const CarSearch = (() =>{
     setURL("https://icanhazdadjoke.com/search?term=car");
-    handleBlock()
+    fetchSearch()
   })  
   
   const AnimalSearch =(() => {
     setURL("https://icanhazdadjoke.com/search?term=dog%20bear%20snake")
-    handleBlock()
+    fetchSearch()
   })
 
   const FoodSearch = (() => {
     setURL("https://icanhazdadjoke.com/search?term=drink%20eat%20beer")
-    handleBlock()
+    fetchSearch()
   })
 
   const handleBlock =(() => {
@@ -78,22 +78,17 @@ function App() {
       }
     });
     const data = await response.json();
-    setInputData(data.results.map((i) => JSON.stringify(i.joke)));
+    const randomIndex = Math.floor(Math.random()* data.results.length)
+    setRandomJokes(data.results[randomIndex].joke)
+    // setInputData(data.results.map((i) => JSON.stringify(i.joke)));
   }
 
-  // const newSearchArr = (() => {
-  //   for (let i=0; i<searchJoke.length; i++){
-  //     return searchJoke[i +1];
-  //   }
-  // })
-
+ 
   useEffect(() => {
     fetchJoke()
   }, [])
 
-  useEffect(() => {
-    fetchSearch();
-  }, [URL])
+ 
 
   
 
@@ -115,25 +110,21 @@ function App() {
       </div>
 
       
-   <div>
-   <JokeDisplay
+    <div>
+        <JokeDisplay
           Random={randomJokes}
           RefreshJoke={handleRandomJoke}
 
-      />
+        />
 
         <NavigationBtns
-          RefreshJoke={handleRandomJoke}
           SearchResults={searchJoke.map((i) => i.joke)}
-          Cars={CarSearch}
           InputValue={handleInput}
-          SubmitBtn={handleSubmit}
+          Cars={CarSearch}
           Animals={AnimalSearch}
           Food={FoodSearch}
-          />
-   
-   </div>
-      
+        />
+    </div>
       </div>
   );
 }

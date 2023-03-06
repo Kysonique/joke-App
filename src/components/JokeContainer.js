@@ -5,10 +5,12 @@ function JokeDisplay(props){
 
     const {Random, RefreshJoke} = props
 
+    const x = Math.floor(Math.random() * 400);
+
     return(
         <div className="main-div">
             <div className="joke-container">
-                <h1 className="joke-numb">ADVICE #</h1>
+                <h1 className="joke-numb">ADVICE #{x}</h1>
                 <div className='div1'>
                     <p className="joke-quote">"{Random}"</p>
                 </div>

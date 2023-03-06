@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export function useBlockSpan(randomJokes){
-    const [change, setChange] = useState(null)
+    const [change, setChange] = useState(false)
     
     useEffect(() => {
         setChange(true)

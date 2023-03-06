@@ -71,7 +71,7 @@
     margin-left: 25px;
 }
 .search-btn{
-    background-color: #53FFAA;
+    background-color: #CEE3E9;
     border: .5px #53FFAA;
     height: 30px;
     width: 30px;
@@ -89,7 +89,7 @@
 
 .span1{
     color: #CEE3E9;
-
+    line-height: 2px;
 }
 .Btn{
     position: absolute;
@@ -109,4 +109,21 @@
     position: absolute;
     margin-left: 42px;
     margin-top: -35px;
+}
+
+@media screen and (max-width: 992px) {
+    .App{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-top: -100px;
+        margin-left: -65px;
+    }
+
+    .search-setup{
+        margin-top: 45px;
+        
+    }
+
 }
