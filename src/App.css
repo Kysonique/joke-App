@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap');
+
+
+.App{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    font-family: 'Manrope';
+
+}
+
+.main-div{
+    width: 540px;
+    height: 332px;
+    background-color:#313A48;
+    margin-top: 180px;
+    margin-left: 130px;
+    font-family: 'Manrope';
+    border-radius: 15px;
+    box-shadow: 30px 50px 80px rgba(0, 0, 0, 0.100202);
+}
+
+.div1{
+    width: 540px;
+    height: 180px;
+    text-align: center;
+}
+.joke-numb{
+    color: #53FFAA;
+    text-align: center;
+}
+
+.joke-quote{
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 38.25px;
+    color: #CEE3E9;
+}
+
+.category-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 132px;
+    margin-top: 60px;
+    width: 540px;
+
+}
+
+.Btn1{
+    background-color: #53FFAA;
+    border: .5px #53FFAA;
+    height: 50px;
+    width: 50px;
+    border-radius: 75%;
+}
+
+/* .search-setup{
+    margin-top: 25px;
+    margin-left: 25px;
+} */
+.searching{
+    background-color: #313A48;
+    width: 250px;
+    height: 35px;
+    text-align: center;
+    border-radius: 8px;
+    border: none;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+.search-btn{
+    background-color: #53FFAA;
+    border: .5px #53FFAA;
+    height: 30px;
+    width: 30px;
+    border-radius: 75%;
+    margin-left: 8px;
+    margin-top: -3px;
+}
+
+.search-span{
+    margin-top: 15px;
+    margin-left: 25px;
+    width: 350px;
+    height: fit-content;
+}
+
+.Btn{
+    position: absolute;
+    background-color: #53FFAA;
+    border: .5px #53FFAA;
+    height: 64px;
+    width: 64px;
+    border-radius: 75%;
+    margin-left: 238px;
+    margin-top: 30px;
+}
+.Btn:active, .Btn1:active, .search-btn:active{
+    box-shadow: 1px 1px 25px  #53FFAA;
+}
+
+.line{
+    position: absolute;
+    margin-left: 42px;
+    margin-top: -35px;
+}
