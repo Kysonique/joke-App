@@ -11,7 +11,7 @@ export function useFetchSearch(inputData){
           });
           const data = await response.json();
           setSearchValue(data.results.joke)   
-        },[])
+        },[inputData])
 
     return {searchValue}
 }
