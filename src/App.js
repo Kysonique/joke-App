@@ -12,8 +12,8 @@ function App() {
   const [URL, setURL] = useState("")
   const [inputData, setInputData] = useState([])
   const [hideSpan, setHideSpan] = useState(true)
-  const {searchValue} = useFetchSearch
   const [searchURL, setSearchURL] = useState("")
+  const {data} = useFetchSearch(searchURL)
 
 
   const handleInput = ((e) => {
@@ -22,8 +22,9 @@ function App() {
   })
 
   const handleSubmit = ((e) => {
-    setSearchURL(`https://icanhazdadjoke.com/search?term=${inputData}`)
-    console.log(searchValue)
+    setSearchURL(`https://icanhazdadjoke.com/search?term=${inputData}`);
+    console.log(data.map((i) => i.joke));
+    setSearchJoke(data.map((i) => i.joke));
     handleBlock()
   })
 
