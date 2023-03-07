@@ -3,17 +3,14 @@ import JokeDisplay from './components/JokeContainer';
 import NavigationBtns from './components/NavBar';
 import SearchIcon from './components/assets/search.svg'
 import { useState, useEffect } from 'react';
-import { useBlockSpan } from './hooks/useBlockSpan';
 
 function App() {
   
   const [randomJokes, setRandomJokes]= useState('')
   const [searchJoke, setSearchJoke] = useState([])
   const [URL, setURL] = useState("")
-  const [searchValue, setSearchValue] = useState('')
   const [inputData, setInputData] = useState([])
   const [hideSpan, setHideSpan] = useState(true)
-  const {change} = useBlockSpan(randomJokes)
 
 
   const handleInput = ((e) => {
@@ -24,9 +21,6 @@ function App() {
   const handleSubmit = ((e) => {
     setURL("https://icanhazdadjoke.com/search")
     handleBlock()
-
-      // setSearchValue(inputData);
-      // console.log(searchValue)
   })
 
 

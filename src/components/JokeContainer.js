@@ -5,7 +5,7 @@ function JokeDisplay(props){
 
     const {Random, RefreshJoke} = props
 
-    const x = Math.floor(Math.random() * 400);
+    const x = Math.floor(Math.random() * Random.length);
 
     return(
         <div className="main-div">
