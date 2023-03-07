@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
 
-export function useFetchSearch(inputData){
+export function useFetchSearch(searchURL){
     const [searchValue, setSearchValue] = useState([])
 
-    useEffect(async () => {
-        const response = await fetch(`https://icanhazdadjoke.com/search?term=${inputData}`, {
+    useEffect(() => {
+      const fetchData = ( async() => {
+          const response = await fetch(searchURL, {
             headers: {
               Accept: "application/json",
             }
           });
           const data = await response.json();
-          setSearchValue(data.results.joke)   
-        },[inputData])
+          setSearchValue(data.results.joke)
+
+        })
+        fetchData()
+      console.log("search fetched")
+      console.log(searchValue)
+      }, [])
 
     return {searchValue}
 }

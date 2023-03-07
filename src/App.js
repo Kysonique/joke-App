@@ -3,6 +3,7 @@ import JokeDisplay from './components/JokeContainer';
 import NavigationBtns from './components/NavBar';
 import SearchIcon from './components/assets/search.svg'
 import { useState, useEffect } from 'react';
+import { useFetchSearch } from './hooks/useFetchSearch';
 
 function App() {
   
@@ -11,6 +12,8 @@ function App() {
   const [URL, setURL] = useState("")
   const [inputData, setInputData] = useState([])
   const [hideSpan, setHideSpan] = useState(true)
+  const {searchValue} = useFetchSearch
+  const [searchURL, setSearchURL] = useState("")
 
 
   const handleInput = ((e) => {
@@ -19,7 +22,8 @@ function App() {
   })
 
   const handleSubmit = ((e) => {
-    setURL("https://icanhazdadjoke.com/search")
+    setSearchURL(`https://icanhazdadjoke.com/search?term=${inputData}`)
+    console.log(searchValue)
     handleBlock()
   })
 
@@ -99,7 +103,7 @@ function App() {
           <br/>
           
         <div className='search-span' style={{display: (hideSpan? "none": "block")}}>
-          <span className='span1'>{inputData}</span>
+          <span className='span1'>{searchJoke}</span>
         </div>
       </div>
 
@@ -112,8 +116,6 @@ function App() {
         />
 
         <NavigationBtns
-          SearchResults={searchJoke.map((i) => i.joke)}
-          InputValue={handleInput}
           Cars={CarSearch}
           Animals={AnimalSearch}
           Food={FoodSearch}
