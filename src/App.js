@@ -8,7 +8,7 @@ import { useFetchSearch } from './hooks/useFetchSearch';
 function App() {
   
   const [randomJokes, setRandomJokes]= useState('')
-  const [searchJoke, setSearchJoke] = useState([])
+  const [searchJoke, setSearchJoke] = useState()
   const [URL, setURL] = useState("")
   const [inputData, setInputData] = useState([])
   const [hideSpan, setHideSpan] = useState(true)
@@ -104,7 +104,7 @@ function App() {
           <br/>
           
         <div className='search-span' style={{display: (hideSpan? "none": "block")}}>
-          <span className='span1'>{searchJoke}</span>
+          <span className='span1'>{JSON.stringify(searchJoke)}</span>
         </div>
       </div>
 
